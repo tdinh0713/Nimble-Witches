@@ -9,17 +9,18 @@ public class CameraFollowGameObject : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        // Get camera's transform component.
         myTransform = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        // Get the difference between the target position and my position.
         float dx = targetTransform.position.x - myTransform.position.x;
         float dy = targetTransform.position.y - myTransform.position.y;
 
-        Vector3 dTransform = new Vector3(dx, dy, 0);
-
-        myTransform.Translate(dTransform);
+        // Move position
+        myTransform.Translate(dx, dy, 0);
 	}
 }

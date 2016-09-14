@@ -9,35 +9,33 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000014216687026}
+  m_RootGameObject: {fileID: 1000012942721432}
   m_IsPrefabParent: 1
---- !u!1 &1000014216687026
+--- !u!1 &1000012942721432
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013176721016}
-  - 20: {fileID: 20000010156994604}
-  - 92: {fileID: 92000011840606278}
-  - 124: {fileID: 124000013538843158}
-  - 81: {fileID: 81000013416874078}
-  - 114: {fileID: 114000013422472664}
-  - 132: {fileID: 132000011013181524}
+  - 4: {fileID: 4000012583334340}
+  - 20: {fileID: 20000010352242836}
+  - 92: {fileID: 92000011436159566}
+  - 124: {fileID: 124000012663232820}
+  - 81: {fileID: 81000013805609136}
+  - 114: {fileID: 114000013382089048}
   m_Layer: 0
-  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000013176721016
+--- !u!4 &4000012583334340
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -45,12 +43,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &20000010156994604
+--- !u!20 &20000010352242836
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -62,14 +60,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 10
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967039
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -79,59 +77,36 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81000013416874078
+--- !u!81 &81000013805609136
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_Enabled: 1
---- !u!92 &92000011840606278
+--- !u!92 &92000011436159566
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_Enabled: 1
---- !u!114 &114000013422472664
+--- !u!114 &114000013382089048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e50c9ff051d97f4ea6010c11ce6edee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
---- !u!124 &124000013538843158
+--- !u!124 &124000012663232820
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
+  m_GameObject: {fileID: 1000012942721432}
   m_Enabled: 1
---- !u!132 &132000011013181524
-GUIText:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014216687026}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: Test Test Test
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 500}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 55
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
