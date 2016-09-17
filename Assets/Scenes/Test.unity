@@ -7002,10 +7002,6 @@ Prefab:
       propertyPath: debugText
       value: 
       objectReference: {fileID: 1899248441}
-    - target: {fileID: 4000013704916256, guid: 6386d296be5d4af419ae94ab53d0bc44, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6386d296be5d4af419ae94ab53d0bc44, type: 2}
   m_IsPrefabParent: 0
