@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update ()
     {
+        mySpriteRenderer.sortingOrder = -1 * 2 * Mathf.RoundToInt(this.transform.position.y);
         isCharging = Input.GetButton("Boost"); // isCharging true if pressing Boost
 
         if (isCharging)
