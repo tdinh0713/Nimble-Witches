@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     public GUIText debugText;
+    public SpriteRenderer compassRenderer;
     public float acceleration; // The force applied every fixed step.
     public float highSpeed; // The speed at which an increased drag will be applied.
     public float linearDrag; // The default drag.
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         else if (Input.GetButtonUp("Boost")) // If the Boost button has just been released
             isBoosting = true; // Then the player is boosting
 
-        mySpriteRenderer.color = new Color(1f - charge, charge, 0f, 1f); // Set our sprite color according to our charge.
+        compassRenderer.color = new Color(1f - charge, charge, 0f, 1f); // Set our sprite color according to our charge.
     }
 
 	void FixedUpdate ()

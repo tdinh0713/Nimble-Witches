@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: d702e7b007c506840978dba68f857275
+timeCreated: 1474441814
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: skeleton nw
+    21300002: skeleton n
+    21300004: skeleton ne
+    21300006: skeleton w
+    21300008: skeleton 2048_4
+    21300010: skeleton e
+    21300012: skeleton sw
+    21300014: skeleton s
+    21300016: skeleton se
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skeleton nw
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1483
+        width: 465
+        height: 447
+      alignment: 9
+      pivot: {x: 0.43156943, y: 0.49389812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton n
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1414
+        width: 163
+        height: 576
+      alignment: 9
+      pivot: {x: 0.43864655, y: 0.50315666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton ne
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1482
+        width: 465
+        height: 448
+      alignment: 9
+      pivot: {x: 0.5566997, y: 0.47564778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton w
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 873
+        width: 586
+        height: 401
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29368457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton 2048_4
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 969
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton e
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 873
+        width: 587
+        height: 403
+      alignment: 9
+      pivot: {x: 0.5464641, y: 0.2924526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton sw
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 144
+        width: 413
+        height: 392
+      alignment: 9
+      pivot: {x: 0.4405642, y: 0.41650662}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton s
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 80
+        width: 196
+        height: 440
+      alignment: 9
+      pivot: {x: 0.46289188, y: 0.50826484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skeleton se
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 144
+        width: 412
+        height: 392
+      alignment: 9
+      pivot: {x: 0.56840676, y: 0.4072296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
