@@ -9309,6 +9309,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014045154892, guid: 91e373f8319eb504497ee64f0f0ad287,
     type: 2}
   m_PrefabInternal: {fileID: 1424302703}
+--- !u!1 &1424858819 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010030689746, guid: 9e27aed36d603ad498c870e4557f587e,
+    type: 2}
+  m_PrefabInternal: {fileID: 2010265045}
+--- !u!114 &1424858821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424858819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301cb1342d1f0949b5b5a3b03a5c964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputWindow: 0
+  spells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1425334390
 Prefab:
   m_ObjectHideFlags: 0
@@ -10827,20 +10855,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012942721432, guid: 81857e9ecd687fe4d8acc387aa2de086, type: 2}
-      propertyPath: m_Name
-      value: Main Camera 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114000013382089048, guid: 81857e9ecd687fe4d8acc387aa2de086,
         type: 2}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 1052222456}
-    - target: {fileID: 20000010352242836, guid: 81857e9ecd687fe4d8acc387aa2de086,
-        type: 2}
-      propertyPath: orthographic size
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81857e9ecd687fe4d8acc387aa2de086, type: 2}
   m_IsPrefabParent: 0
