@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Spellcaster : MonoBehaviour {
 
+    public ReticuleMovement reticule;
     public GameObject[] spells;
 
     private float inputTime;
@@ -14,28 +15,34 @@ public class Spellcaster : MonoBehaviour {
     private const int EARTH = 2;
     private const int WATER = 4;
     private const int AIR = 8;
-    private int spell1, spell2;
-
+    private bool isCasting = false;
     private Queue spellQueue;
+    private Transform myTransform;
 
 	// Use this for initialization
 	void Start ()
     {
+        myTransform = GetComponent<Transform>();
+        reticule.SetMode(0);
         spellQueue = new Queue();
 	}
 
     // Update is called once per frame
     void Update()
     {
+        myTransform.rotation = Quaternion.identity;
         // Check all spell element inputs, enqueue the input.
-        for (int i = 1; i <= NUMBER_OF_SPELLS; i++)
+        if (isCasting == false)
         {
-            bool pressedButton = Input.GetButtonDown("Spell " + i.ToString());
-            if (pressedButton == true)
+            for (int i = 1; i <= NUMBER_OF_SPELLS; i++)
             {
-                spellQueue.Enqueue(i);
-                if (spellQueue.Count > 2)
-                    spellQueue.Dequeue();
+                bool pressedButton = Input.GetButtonDown("Spell " + i.ToString());
+                if (pressedButton == true)
+                {
+                    spellQueue.Enqueue(i);
+                    if (spellQueue.Count > 2)
+                        spellQueue.Dequeue();
+                }
             }
         }
 
@@ -43,27 +50,52 @@ public class Spellcaster : MonoBehaviour {
         if (Input.GetButtonDown("Cancel Spell"))
         {
             spellQueue.Clear();
+            reticule.SetMode(0);
         }
 
         // Cast Spell
         if (Input.GetButtonDown("Cast Spell"))
         {
-            CastSpell((int)spellQueue.Dequeue(), (int)spellQueue.Dequeue());
+            if (spellQueue.Count == 2)
+            {
+                if (isCasting == true)
+                {
+                    CastSpell((int)spellQueue.Dequeue(), (int)spellQueue.Dequeue());
+                    reticule.SetMode(0);
+                    isCasting = false;
+                }
+                else
+                {
+                    isCasting = true;
+                    reticule.SetMode(ResolveSpellMode(spellQueue));
+                }
+            }
         }
+    }
+
+    int ResolveSpellMode (Queue spellQueue)
+    {
+        Queue copy = new Queue(spellQueue);
+        int spell = ResolveSpell((int)copy.Dequeue(), (int)copy.Dequeue());
+        return reticule.GetSpellMode(spell);
+    }
+
+    int ResolveSpell (int spell1, int spell2)
+    {
+        if (spell1 == spell2)
+            return spell1;
+        else
+            return spell1 + spell2;
     }
 
     void CastSpell (int spell1, int spell2)
     {
-        int spell;
-        if (spell1 == spell2)
-            spell = spell1;
-        else
-            spell = spell1 + spell2;
+        int spell = ResolveSpell(spell1, spell2);
 
         switch (spell)
         {
             case 1: // FIRE
-                // instantiate spells[0]
+                // instantiate spells[1]
                 break;
 
             case 2: // EARTH

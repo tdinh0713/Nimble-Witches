@@ -5,12 +5,16 @@ public class ReticuleMovement : MonoBehaviour {
 
     public Transform mySpellcaster;
     public Sprite[] mySprites;
+    public int[] mySpellModes;
 
     private Transform myTransform;
     private SpriteRenderer mySpriteRenderer;
-    private int mode;
-    private float aimMaxRadius;
+    private int mode = 0;
+    private float maxRadius;
     private float aimRotation;
+
+    public float deadZone = 0.25f;
+    public float aimSlerp = 0.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -20,7 +24,7 @@ public class ReticuleMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         Vector2 aimInput = new Vector2(Input.GetAxis("Spell Horizontal"), Input.GetAxis("Spell Vertical"));
 
@@ -30,8 +34,12 @@ public class ReticuleMovement : MonoBehaviour {
                 break;
 
             case 1: // STRAIGHT LINE
-                    float degrees = Vector2.Angle(new Vector2(0, 1), aimInput.normalized);
-                    aimRotation = degrees;
+                if (aimInput.magnitude >= deadZone)
+                {
+                    Quaternion rotateTo = Quaternion.LookRotation(Vector3.forward, new Vector3(Input.GetAxis("Spell Horizontal"), Input.GetAxis("Spell Vertical"), 0));
+                    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, rotateTo, aimSlerp);
+                }
+
                 break;
 
             case 2: // CIRCLE
@@ -48,9 +56,9 @@ public class ReticuleMovement : MonoBehaviour {
         }
     }
 
-    public void SetAimMaxRadius (float radius)
+    public void SetMaxRadius (float radius)
     {
-        aimMaxRadius = radius;
+        maxRadius = radius;
     }
 
     public void SetAimRotation (float rotation)
@@ -66,5 +74,10 @@ public class ReticuleMovement : MonoBehaviour {
     public float GetAimRotation ()
     {
         return aimRotation;
+    }
+
+    public int GetSpellMode (int spell)
+    {
+        return mySpellModes[spell];
     }
 }

@@ -42,7 +42,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update ()
     {
-        mySpriteRenderer.sortingOrder = -1 * 2 * Mathf.RoundToInt(this.transform.position.y);
+        mySpriteRenderer.sortingOrder = -1 * 2 * Mathf.RoundToInt(this.transform.position.y); // Y-based depth sorting.
+
         isCharging = Input.GetButton("Boost"); // isCharging true if pressing Boost
 
         if (isCharging)
