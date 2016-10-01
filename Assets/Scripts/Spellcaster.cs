@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Spellcaster : MonoBehaviour {
 
+    public GUIText debugText;
     public ReticuleMovement reticule;
     public GameObject[] spells;
     public int[] mySpellModes;
@@ -44,6 +45,7 @@ public class Spellcaster : MonoBehaviour {
                     spellQueue.Enqueue(i);
                     if (spellQueue.Count > 2)
                         spellQueue.Dequeue();
+                    UpdateDebugText(spellQueue);
                 }
             }
         }
@@ -52,41 +54,55 @@ public class Spellcaster : MonoBehaviour {
         if (Input.GetButtonDown("Cancel Spell"))
         {
             spellQueue.Clear();
+            isCasting = false;
             reticule.SetMode(0);
+            debugText.text = "Spell: 0, 0";
         }
 
         // Cast Spell
         if (Input.GetButtonDown("Cast Spell"))
         {
-            if (spellQueue.Count == 2)
+            if (isCasting == true)
             {
-                if (isCasting == true)
-                {
-                    CastSpell((int)spellQueue.Dequeue(), (int)spellQueue.Dequeue());
-                    reticule.SetMode(0);
-                    isCasting = false;
-                }
-                else
-                {
-                    isCasting = true;
-                    reticule.SetMode(ResolveSpellMode(spellQueue));
-                    reticule.SetMaxRadius(ResolveSpellRadius(spellQueue));
-                }
+                int spell1 = spellQueue.Count > 0 ? (int)spellQueue.Dequeue() : 0;
+                int spell2 = spellQueue.Count > 0 ? (int)spellQueue.Dequeue() : 0;
+                CastSpell(spell1, spell2);
+                reticule.SetMode(0);
+                debugText.text = "Spell: 0, 0";
+                isCasting = false;
+            }
+            else
+            {
+                isCasting = true;
+                reticule.SetMode(ResolveSpellMode(spellQueue));
+                reticule.SetMaxRadius(ResolveSpellRadius(spellQueue));
             }
         }
+    }
+
+    void UpdateDebugText (Queue spellQueue)
+    {
+        Queue copy = new Queue(spellQueue);
+        int spell1 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        int spell2 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        debugText.text = "Spell: " + spell1 + ", " + spell2;
     }
 
     int ResolveSpellMode (Queue spellQueue)
     {
         Queue copy = new Queue(spellQueue);
-        int spell = ResolveSpell((int)copy.Dequeue(), (int)copy.Dequeue());
+        int spell1 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        int spell2 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        int spell = ResolveSpell(spell1, spell2);
         return mySpellModes[spell];
     }
 
     float ResolveSpellRadius (Queue spellQueue)
     {
         Queue copy = new Queue(spellQueue);
-        int spell = ResolveSpell((int)copy.Dequeue(), (int)copy.Dequeue());
+        int spell1 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        int spell2 = copy.Count > 0 ? (int)copy.Dequeue() : 0;
+        int spell = ResolveSpell(spell1, spell2);
         return mySpellRadiuses[spell];
     }
 
@@ -97,8 +113,6 @@ public class Spellcaster : MonoBehaviour {
         else
             return spell1 + spell2;
     }
-
-    
 
     void CastSpell (int spell1, int spell2)
     {

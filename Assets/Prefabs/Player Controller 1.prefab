@@ -341,7 +341,7 @@ MonoBehaviour:
   mySpellModes: 00000000010000000200000001000000010000000100000001000000000000000100000001000000010000000000000001000000
   mySpellRadiuses:
   - 0
-  - 0
+  - 3
   - 3
   - 0
   - 0
@@ -500,7 +500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 32767
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212000011234182856
