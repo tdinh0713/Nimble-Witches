@@ -5,7 +5,6 @@ public class ReticuleMovement : MonoBehaviour {
 
     public Transform mySpellcaster;
     public Sprite[] mySprites;
-    public int[] mySpellModes;
 
     private Transform myTransform;
     private SpriteRenderer mySpriteRenderer;
@@ -26,7 +25,7 @@ public class ReticuleMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        Vector2 aimInput = new Vector2(Input.GetAxis("Spell Horizontal"), Input.GetAxis("Spell Vertical"));
+        Vector3 aimInput = new Vector3(Input.GetAxis("Spell Horizontal"), Input.GetAxis("Spell Vertical"), 0);
 
         switch (mode)
         {
@@ -36,13 +35,13 @@ public class ReticuleMovement : MonoBehaviour {
             case 1: // STRAIGHT LINE
                 if (aimInput.magnitude >= deadZone)
                 {
-                    Quaternion rotateTo = Quaternion.LookRotation(Vector3.forward, new Vector3(Input.GetAxis("Spell Horizontal"), Input.GetAxis("Spell Vertical"), 0));
+                    Quaternion rotateTo = Quaternion.LookRotation(Vector3.forward, aimInput);
                     myTransform.rotation = Quaternion.Slerp(myTransform.rotation, rotateTo, aimSlerp);
                 }
-
                 break;
 
             case 2: // CIRCLE
+                myTransform.localPosition = maxRadius * aimInput;
                 break;
         }
 	}
@@ -54,6 +53,18 @@ public class ReticuleMovement : MonoBehaviour {
             this.mode = mode;
             mySpriteRenderer.sprite = mySprites[mode];
         }
+
+        switch(mode)
+        {
+            case 1:
+                myTransform.localPosition = new Vector3(0, 0, 0);
+                break;
+
+            case 2:
+                myTransform.rotation = Quaternion.identity;
+                break;
+        }
+            
     }
 
     public void SetMaxRadius (float radius)
@@ -74,10 +85,5 @@ public class ReticuleMovement : MonoBehaviour {
     public float GetAimRotation ()
     {
         return aimRotation;
-    }
-
-    public int GetSpellMode (int spell)
-    {
-        return mySpellModes[spell];
     }
 }

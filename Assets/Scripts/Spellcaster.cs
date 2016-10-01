@@ -5,6 +5,8 @@ public class Spellcaster : MonoBehaviour {
 
     public ReticuleMovement reticule;
     public GameObject[] spells;
+    public int[] mySpellModes;
+    public float[] mySpellRadiuses;
 
     private float inputTime;
     private bool expectingSecondInput;
@@ -68,6 +70,7 @@ public class Spellcaster : MonoBehaviour {
                 {
                     isCasting = true;
                     reticule.SetMode(ResolveSpellMode(spellQueue));
+                    reticule.SetMaxRadius(ResolveSpellRadius(spellQueue));
                 }
             }
         }
@@ -77,7 +80,14 @@ public class Spellcaster : MonoBehaviour {
     {
         Queue copy = new Queue(spellQueue);
         int spell = ResolveSpell((int)copy.Dequeue(), (int)copy.Dequeue());
-        return reticule.GetSpellMode(spell);
+        return mySpellModes[spell];
+    }
+
+    float ResolveSpellRadius (Queue spellQueue)
+    {
+        Queue copy = new Queue(spellQueue);
+        int spell = ResolveSpell((int)copy.Dequeue(), (int)copy.Dequeue());
+        return mySpellRadiuses[spell];
     }
 
     int ResolveSpell (int spell1, int spell2)
@@ -87,6 +97,8 @@ public class Spellcaster : MonoBehaviour {
         else
             return spell1 + spell2;
     }
+
+    
 
     void CastSpell (int spell1, int spell2)
     {
