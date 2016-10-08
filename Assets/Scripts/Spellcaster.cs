@@ -122,6 +122,10 @@ public class Spellcaster : MonoBehaviour {
         {
             case 1: // FIRE
                 // instantiate spells[1]
+				//Regular cast
+				Instantiate(spells[spell], myTransform.position, myTransform.rotation);
+				//AOE cast
+				//Instantiate(spells[spell], reticule.position, reticule.rotation);
                 break;
 
             case 2: // EARTH
