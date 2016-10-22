@@ -20,4 +20,10 @@ public class Sort2D : MonoBehaviour
     {
 
     }
+
+	void OnCollisionEnter (Collision other) {
+		if (other.gameObject.tag == "Spell") {
+			Destroy(other.gameObject);
+		}
+	}
 }

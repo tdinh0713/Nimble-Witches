@@ -21,6 +21,7 @@ public class Spellcaster : MonoBehaviour {
     private bool isCasting = false;
     private Queue spellQueue;
     private Transform myTransform;
+	private const float fireSpeed = 7.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -120,10 +121,11 @@ public class Spellcaster : MonoBehaviour {
 
         switch (spell)
         {
-            case 1: // FIRE
+		case 1: // FIRE
                 // instantiate spells[1]
 				//Regular cast
-				Instantiate(spells[spell], myTransform.position, myTransform.rotation);
+			GameObject fireball = Instantiate (spells [spell], myTransform.position, myTransform.rotation) as GameObject;
+			fireball.GetComponent<Rigidbody> ().velocity = reticule.myTransform.up * fireSpeed;
 				//AOE cast
 				//Instantiate(spells[spell], reticule.position, reticule.rotation);
                 break;

@@ -5290,8 +5290,13 @@ Prefab:
         type: 2}
       propertyPath: spells.Array.data[1]
       value: 
-      objectReference: {fileID: 1000011512001152, guid: b82c840e5fd9b471d85d0a7f987c100b,
+      objectReference: {fileID: 1000012493746732, guid: 230938dcce9cb42c585b5763064ff388,
         type: 2}
+    - target: {fileID: 58000011156703198, guid: 9e27aed36d603ad498c870e4557f587e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e27aed36d603ad498c870e4557f587e, type: 2}
   m_IsPrefabParent: 0
@@ -6204,6 +6209,14 @@ Prefab:
     - target: {fileID: 1000010736800624, guid: 91e373f8319eb504497ee64f0f0ad287, type: 2}
       propertyPath: m_Name
       value: Block (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010736800624, guid: 91e373f8319eb504497ee64f0f0ad287, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010736800624, guid: 91e373f8319eb504497ee64f0f0ad287, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91e373f8319eb504497ee64f0f0ad287, type: 2}

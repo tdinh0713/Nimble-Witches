@@ -6,7 +6,7 @@ public class ReticuleMovement : MonoBehaviour {
     public Transform mySpellcaster;
     public Sprite[] mySprites;
 
-    private Transform myTransform;
+    public Transform myTransform;
     private SpriteRenderer mySpriteRenderer;
     private int mode = 0;
     private float maxRadius;
